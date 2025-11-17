@@ -23,7 +23,7 @@ class Transliterator
      */
     private $map;
 
-    public function __construct(string $lang = null, string $map = null)
+    public function __construct(?string $lang = null, ?string $map = null)
     {
         $this->lang = $lang;
         $this->map = $map;
