@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         operating-system: [ubuntu-latest, macOS-12]
-        php-versions: [8.0, 8.1, 8.2, 8.3]
+        php-versions: [8.1, 8.2, 8.3, 8.4]
     name: PHP ${{ matrix.php-versions }} Test on ${{ matrix.operating-system }}
 
     steps:
@@ -28,7 +28,7 @@ jobs:
         run: echo "::set-output name=dir::$(composer config cache-files-dir)"
 
       - name: Cache composer dependencies
-        uses: actions/cache@v1
+        uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           # Use composer.json for key, if composer.lock is not committed.
